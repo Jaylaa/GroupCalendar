@@ -28,6 +28,9 @@ Select and that portion is unreadable.
 Modify event forwarded so that untrusted guild members can still forward events for others
 ------------------------------------------------------------------------
 
+European default time format
+add short command for opening /cld
+
 v2.2.1 Changes:
 
 - Updated name of Ahn'Qiraj Temple reset event for patch 1.11
