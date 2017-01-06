@@ -7,4 +7,4 @@ Open - icon in the minimap or
 
 /cld
 
-Edit: European time format
+Edit: European time format default 
