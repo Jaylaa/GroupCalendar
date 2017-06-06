@@ -4,6 +4,8 @@ gGroupCalendar_Settings =
 {
 	Debug = false,
 	ShowEventsInLocalTime = false,
+	TwentyFourHourTime = false,
+	WeekStartMonday = false,
 };
 
 gGroupCalendar_PlayerSettings = nil;
@@ -180,12 +182,20 @@ function GroupCalendar_OnShow()
 	if IsInGuild() and GetNumGuildMembers() == 0 then
 		GuildRoster();
 	end
+
+	-- Init weekstart
+	GroupCalendar_InitWeekStart();
 	
 	Calendar_SetDisplayDate(vMonthStartDate);
 	Calendar_SetActualDate(vMonthStartDate + vDay - 1);
 	GroupCalendar_ShowPanel(1); -- Always switch  back to the Calendar view when showing the window
 	
 	GroupCalendarUseServerTime:SetChecked(not gGroupCalendar_Settings.ShowEventsInLocalTime);
+	GroupCalendarUseTwentyFourHourTime:SetChecked(not gGroupCalendar_Settings.TwentyFourHourTime);
+	GroupCalendarWeekStartMonday:SetChecked(not gGroupCalendar_Settings.WeekStartMonday);
+	
+	TwentyFourHourTime = not gGroupCalendar_Settings.TwentyFourHourTime;
+	
 end
 
 function GroupCalendar_OnHide()
@@ -1247,6 +1257,52 @@ function GroupCalendar_SetUseServerDateTime(pUseServerDateTime)
 	GroupCalendarUseServerTime:SetChecked(pUseServerDateTime);
 	
 	GroupCalendar_MajorDatabaseChange(nil); -- Force the display to update
+end
+
+-- copy from GroupCalendar_SetUseServerDateTime
+function GroupCalendar_SetUseTwentyFourHourTime(pUseTwentyFourHourTime)
+	gGroupCalendar_Settings.TwentyFourHourTime = not pUseTwentyFourHourTime;
+	
+	GroupCalendarUseTwentyFourHourTime:SetChecked(pUseTwentyFourHourTime);
+	TwentyFourHourTime = not gGroupCalendar_Settings.TwentyFourHourTime;
+	
+	GroupCalendar_MajorDatabaseChange(nil); -- Force the display to update
+end
+
+-- copy from GroupCalendar_SetUseServerDateTime
+function GroupCalendar_SetWeekStartMonday(pWeekStartMonday)
+	gGroupCalendar_Settings.WeekStartMonday = not pWeekStartMonday;
+	
+	GroupCalendarWeekStartMonday:SetChecked(pWeekStartMonday);
+
+	GroupCalendar_InitWeekStart();
+	
+	-- dont know how to refresh it better
+	HideUIPanel(GroupCalendarFrame);
+	ShowUIPanel(GroupCalendarFrame);
+end
+
+function GroupCalendar_InitWeekStart()
+	-- rename header labels
+	if(not gGroupCalendar_Settings.WeekStartMonday) then
+		WeekStartMonday = 1;
+		WeekdayLabel0:SetText(GroupCalendar_cMon);
+		WeekdayLabel1:SetText(GroupCalendar_cTue);
+		WeekdayLabel2:SetText(GroupCalendar_cWed);
+		WeekdayLabel3:SetText(GroupCalendar_cThu);
+		WeekdayLabel4:SetText(GroupCalendar_cFri);
+		WeekdayLabel5:SetText(GroupCalendar_cSat);
+		WeekdayLabel6:SetText(GroupCalendar_cSun);
+	else
+		WeekStartMonday = 0;
+		WeekdayLabel0:SetText(GroupCalendar_cSun);
+		WeekdayLabel1:SetText(GroupCalendar_cMon);
+		WeekdayLabel2:SetText(GroupCalendar_cTue);
+		WeekdayLabel3:SetText(GroupCalendar_cWed);
+		WeekdayLabel4:SetText(GroupCalendar_cThu);
+		WeekdayLabel5:SetText(GroupCalendar_cFri);
+		WeekdayLabel6:SetText(GroupCalendar_cSat);
+	end
 end
 
 function GroupCalendar_BeginModalDialog(pDialogFrame)

@@ -36,7 +36,13 @@ if GetLocale() == "frFR" then
 
 	GroupCalendar_cUseServerDateTime = "Utiliser les horaires du serveur";
 	GroupCalendar_cUseServerDateTimeDescription = "Turn on to show events using the server date and time, turn off to use your local date and time";
-	
+
+	GroupCalendar_cUseTwentyFourHourTime = "Use 24h time format";
+	GroupCalendar_cUseTwentyFourHourTimeDescription = "Turn on 24 time format";
+
+	GroupCalendar_cWeekStartMonday = "Week start on Monday";
+	GroupCalendar_cWeekStartMondayDescription = "Turn on to start the week on Monday, turn off to start on Sunday";
+
 	GroupCalendar_cChannelConfigTitle = "Config canal de donn\195\169es";
 	GroupCalendar_cChannelConfigDescription = "Le canal de donn\195\169es du calendrier est utilis\195\169 pour envoyer et recevoir les events entre joueurs. Toute personne pouvant joindre le canal pourra voir vos \195\169vents s\'ils le veulent. Pour garder votre calendrier priv\195\169 vous devriez utiliser un mot de passe pour le canal.";
 	GroupCalendar_cAutoChannelConfig = "Configuration de canal automatique";

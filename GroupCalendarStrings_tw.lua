@@ -42,6 +42,12 @@ if GetLocale() == "zhTW" then
 	GroupCalendar_cUseServerDateTime = "使用伺服器日期與時間";
 	GroupCalendar_cUseServerDateTimeDescription = "啟動此功能將會以伺服器的日期與時間來顯示活動資訊，若關閉此功能則會以您的電腦日期及時間來顯示。";
 
+	GroupCalendar_cUseTwentyFourHourTime = "Use 24h time format";
+	GroupCalendar_cUseTwentyFourHourTimeDescription = "Turn on 24 time format";
+
+	GroupCalendar_cWeekStartMonday = "Week start on Monday";
+	GroupCalendar_cWeekStartMondayDescription = "Turn on to start the week on Monday, turn off to start on Sunday";
+
 	GroupCalendar_cChannelConfigTitle = "資料頻道設定";
 	GroupCalendar_cChannelConfigDescription = "行事曆頻道用來傳送及接收玩家之間的活動，所有在頻道的人都能瀏灠您的活動。若想替您的行事曆保密就必須設定密碼。";
 	GroupCalendar_cAutoChannelConfig = "自動頻道設定";

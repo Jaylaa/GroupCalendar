@@ -38,6 +38,12 @@ GroupCalendar_cAbout = "About";
 GroupCalendar_cUseServerDateTime = "Use server dates and times";
 GroupCalendar_cUseServerDateTimeDescription = "Turn on to show events using the server date and time, turn off to use your local date and time";
 
+GroupCalendar_cUseTwentyFourHourTime = "Use 24h time format";
+GroupCalendar_cUseTwentyFourHourTimeDescription = "Turn on 24 time format";
+
+GroupCalendar_cWeekStartMonday = "Week start on Monday";
+GroupCalendar_cWeekStartMondayDescription = "Turn on to start the week on Monday, turn off to start on Sunday";
+
 GroupCalendar_cChannelConfigTitle = "Data Channel Setup";
 GroupCalendar_cChannelConfigDescription = "The calendar data channel is used to send and receive events between players.  Anyone able to join the channel will be able to see your events if they choose to.  To keep your calendar private a channel password should be used.";
 GroupCalendar_cAutoChannelConfig = "Automatic channel configuration";

@@ -37,6 +37,12 @@
 	GroupCalendar_cUseServerDateTime = "Benutze Server-Zeitformat";
 	GroupCalendar_cUseServerDateTimeDescription = "Aktivieren um Events im Server Zeitformat anzuzeigen. Deaktivieren um Events im lokalen Zeitformat anzuzeigen";
 	
+	GroupCalendar_cUseTwentyFourHourTime = "24h Zeit";
+	GroupCalendar_cUseTwentyFourHourTimeDescription = "Schaltet 24h Zeit-Format ein oder aus";
+
+	GroupCalendar_cWeekStartMonday = "Woche startet Montag";
+	GroupCalendar_cWeekStartMondayDescription = "Woche startet Montag, wenn aus Sonntag.";
+	
     GroupCalendar_cChannelConfigTitle = "Daten Channel Setup";
     GroupCalendar_cChannelConfigDescription = "\195\156ber den Daten Channel tauscht GroupCalendar die Event Informationen zwischen den einzelnen Spielern aus. Jeder der diesen Channel betreten kann, ist in der Lage deine Eintragungen zu sehen. Man kann dem Channel ein Passwort geben um seinen Kalender privat zu halten.";
     GroupCalendar_cAutoChannelConfig = "Automatische Channel Konfiguration";

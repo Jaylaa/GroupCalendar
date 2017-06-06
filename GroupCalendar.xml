@@ -114,7 +114,7 @@
 	
 	<Frame name="GroupCalendarFrame" toplevel="true" movable="true" parent="UIParent" enableMouse="true" hidden="true">
 		<Size>
-			<AbsDimension x="349" y="400"/>
+			<AbsDimension x="349" y="443"/>
 		</Size>
 		<Anchors>
 			<Anchor point="TOPLEFT">
@@ -164,7 +164,7 @@
 				</Texture>
 				<Texture file="Interface\AddOns\GroupCalendar\Textures\CalendarFrame-BottomLeft">
 					<Size>
-						<AbsDimension x="256" y="256"/>
+						<AbsDimension x="256" y="356"/>
 					</Size>
 					<Anchors>
 						<Anchor point="TOPLEFT">
@@ -176,7 +176,7 @@
 				</Texture>
 				<Texture file="Interface\AddOns\GroupCalendar\Textures\CalendarFrame-BottomRight">
 					<Size>
-						<AbsDimension x="128" y="256"/>
+						<AbsDimension x="128" y="356"/>
 					</Size>
 					<Anchors>
 						<Anchor point="TOPLEFT">
@@ -705,6 +705,58 @@
 							</OnClick>
 							<OnEnter>
 								GameTooltip_AddNewbieTip(GroupCalendar_cUseServerDateTime, 1.0, 1.0, 1.0, GroupCalendar_cUseServerDateTimeDescription, 1);
+							</OnEnter>
+							<OnLeave>
+								GameTooltip:Hide();
+							</OnLeave>
+						</Scripts>
+					</CheckButton>
+					<CheckButton name="GroupCalendarUseTwentyFourHourTime" inherits="OptionsCheckButtonTemplate">
+						<Size>
+							<AbsDimension x="26" y="26"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="GroupCalendarUseServerTime" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-26" y="-20"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								getglobal(this:GetName().."Text"):SetText(GroupCalendar_cUseTwentyFourHourTime);
+							</OnLoad>
+							<OnClick>
+								GroupCalendar_SetUseTwentyFourHourTime(this:GetChecked());
+							</OnClick>
+							<OnEnter>
+								GameTooltip_AddNewbieTip(GroupCalendar_cUseTwentyFourHourTime, 1.0, 1.0, 1.0, GroupCalendar_cUseTwentyFourHourTimeDescription, 1);
+							</OnEnter>
+							<OnLeave>
+								GameTooltip:Hide();
+							</OnLeave>
+						</Scripts>
+					</CheckButton>
+					<CheckButton name="GroupCalendarWeekStartMonday" inherits="OptionsCheckButtonTemplate">
+						<Size>
+							<AbsDimension x="26" y="26"/>
+						</Size>
+						<Anchors>
+							<Anchor point="LEFT" relativeTo="GroupCalendarUseTwentyFourHourTime" relativePoint="RIGHT">
+								<Offset>
+									<AbsDimension x="-26" y="-20"/>
+								</Offset>
+							</Anchor>
+						</Anchors>
+						<Scripts>
+							<OnLoad>
+								getglobal(this:GetName().."Text"):SetText(GroupCalendar_cWeekStartMonday);
+							</OnLoad>
+							<OnClick>
+								GroupCalendar_SetWeekStartMonday(this:GetChecked());
+							</OnClick>
+							<OnEnter>
+								GameTooltip_AddNewbieTip(GroupCalendar_cWeekStartMonday, 1.0, 1.0, 1.0, GroupCalendar_cWeekStartMondayDescription, 1);
 							</OnEnter>
 							<OnLeave>
 								GameTooltip:Hide();

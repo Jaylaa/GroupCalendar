@@ -803,7 +803,6 @@ end
 
 function Calendar_SetCalendarRange(pStartDay, pNumDays)
 	-- Hide days before the start day
-	
 	gCalendarDisplayStartDayOfWeek = pStartDay;
 	
 	for vIndex = 0, pStartDay - 1 do
@@ -819,7 +818,6 @@ function Calendar_SetCalendarRange(pStartDay, pNumDays)
 		local	vDayButton = getglobal("GroupCalendarDay"..vIndex);
 		local	vDayIcon = getglobal("GroupCalendarDay"..vIndex.."Icon");
 		local	vDayText = getglobal("GroupCalendarDay"..vIndex.."Name");
-		
 		vDayButton:Show();
 		vDayText:SetText(vDayNumber);
 	end
@@ -922,7 +920,6 @@ end
 
 function Calendar_GetDayOfWeek(pMonth, pDay, pYear)
 	local	vDayOfWeek = 6; -- January 1, 2000 is a Saturday
-	
 	for vYear = 2000, pYear - 1 do
 		if Calendar_IsLeapYear(vYear) then
 			vDayOfWeek = vDayOfWeek + 2;
@@ -930,9 +927,7 @@ function Calendar_GetDayOfWeek(pMonth, pDay, pYear)
 			vDayOfWeek = vDayOfWeek + 1;
 		end
 	end
-	
-	vDayOfWeek = vDayOfWeek + Calendar_GetDaysToDate(pMonth, pDay, pYear);
-	
+	vDayOfWeek = vDayOfWeek + Calendar_GetDaysToDate(pMonth, pDay, pYear) - WeekStartMonday;
 	return math.mod(vDayOfWeek, 7);
 end
 

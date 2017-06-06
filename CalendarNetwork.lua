@@ -2820,8 +2820,8 @@ function CalendarNetwork_RequestAllDatabaseUpdates()
 	for vRealmName, vDatabase in gGroupCalendar_Database.Databases do
 		if EventDatabase_DatabaseIsVisible(vDatabase)
 		and vDatabase.IsPlayerOwned then
-			CalendarNetwork_RequestUpdate(vDatabase, vDatabase.Changes, "DB", true, true);
-			CalendarNetwork_RequestUpdate(vDatabase, vDatabase.RSVPs, "RAT", true, true);
+			CalendarNetwork_RequestUpdate(vDatabase, vDatabase.Changes, "DB", false, true);
+			CalendarNetwork_RequestUpdate(vDatabase, vDatabase.RSVPs, "RAT", false, true);
 		end
 	end
 	

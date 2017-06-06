@@ -41,6 +41,12 @@ if GetLocale() == "zhCN" then
 
 	GroupCalendar_cUseServerDateTime = "使用伺服器日期与时间";
 	GroupCalendar_cUseServerDateTimeDescription = "启动此功能将会以伺服器的日期与时间来显示活动资讯，若关闭此功能则会以您的电脑日期及时间来显示。";
+	
+	GroupCalendar_cUseTwentyFourHourTime = "Use 24h time format";
+	GroupCalendar_cUseTwentyFourHourTimeDescription = "Turn on 24 time format";
+
+	GroupCalendar_cWeekStartMonday = "Week start on Monday";
+	GroupCalendar_cWeekStartMondayDescription = "Turn on to start the week on Monday, turn off to start on Sunday";
 
 	GroupCalendar_cChannelConfigTitle = "资料频道设定";
 	GroupCalendar_cChannelConfigDescription = "行事历频道用来传送及接收玩家之间的活动，所有在频道的人都能浏灠您的活动。若想替您的行事历保密就必须设定密码。";
